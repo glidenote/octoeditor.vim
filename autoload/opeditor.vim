@@ -34,10 +34,6 @@ if !exists('g:octopress_post_suffix')
   let g:octopress_post_suffix = "markdown"
 endif
 
-if !exists('g:octopress_post_published')
-  let g:octopress_post_published = 1
-endif
-
 if !exists('g:octopress_post_date')
   let g:octopress_post_date = "%Y-%m-%d %H:%M"
 endif
@@ -119,7 +115,6 @@ function! opeditor#new(title)
   let items = {
   \ 'title': a:title,
   \ 'date':  localtime(),
-  \ 'published': [],
   \ 'tags':  [],
   \ 'categories':  [],
   \}
@@ -128,16 +123,10 @@ function! opeditor#new(title)
     let items['date'] = strftime(g:octopress_post_date)
   endif
   if items['title'] == ''
-    let items['title']= input("Post title: ", "", "customlist,octopress#_complete_ymdhms")
+    let items['title']= input("Post title: ", "")
   endif
   if items['title'] == ''
     return
-  endif
-
-  if g:octopress_post_published == 0
-    let itmes['published'] = 'false'
-  else
-    let items['published'] = 'true'
   endif
 
   if get(g:, 'octopress_prompt_tags', 0) != 0
@@ -171,7 +160,7 @@ let s:default_template = [
 \ '---' ,
 \ 'layout: post',
 \ 'title: {{_title_}}',
-\ 'published: {{_published_}}',
+\ 'published: true',
 \ 'date: {{_date_}}',
 \ 'tags: [{{_tags_}}]',
 \ 'categories: [{{_categories_}}]',
