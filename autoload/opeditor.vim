@@ -84,11 +84,11 @@ function! opeditor#list()
 endfunction
 
 function opeditor#generate()
-  exe "!rake generate "
+  exe "!cd " s:escarg(g:octopress_path) . " && rake generate "
 endfunction
 
-function opeditor#gendeploy()
-  exe "!rake gen_deploy "
+function opeditor#deploy()
+  exe "!cd " s:escarg(g:octopress_path) . " && rake gen_deploy "
 endfunction
 
 function! opeditor#grep(word)
