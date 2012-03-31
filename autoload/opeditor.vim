@@ -102,9 +102,9 @@ function! opeditor#grep(word)
 
   try
     if get(g:, 'octopress_qfixgrep', 0) != 0
-      exe "Vimgrep" s:escarg(word) s:escarg(g:octopress_path . "/*")
+      exe "Vimgrep" s:escarg(word) s:escarg(g:octopress_path . "/source/_posts/*")
     else
-      exe "vimgrep" s:escarg(word) s:escarg(g:octopress_path . "/*")
+      exe "vimgrep" s:escarg(word) s:escarg(g:octopress_path . "/source/_posts/*")
     endif
   catch
     redraw | echohl ErrorMsg | echo v:exception | echohl None
