@@ -54,6 +54,10 @@ if !exists('g:octopress_prompt_categories')
   let g:octopress_prompt_categories = ""
 endif
 
+if !exists('g:octopress_template_dir_path')
+  let g:octopress_template_dir_path = ""
+endif
+
 function! s:esctitle(str)
   let str = a:str
   let str = tolower(str)
@@ -75,23 +79,23 @@ endif
 "------------------------
 " function
 "------------------------
-function! octopress#list()
+function! opeditor#list()
   if get(g:, 'octopress_vimfiler', 0) != 0
-    exe "VimFiler" s:escarg(g:octopress_path)
+    exe "VimFiler" s:escarg(g:octopress_path) . "/source/_posts"
   else
-    exe "e" s:escarg(g:octopress_path)
+    exe "e" s:escarg(g:octopress_path) . "/source/_posts"
   endif
 endfunction
 
-function octopress#generate()
+function opeditor#generate()
   exe "!rake generate "
 endfunction
 
-function octopress#gendeploy()
+function opeditor#gendeploy()
   exe "!rake gen_deploy "
 endfunction
 
-function! octopress#grep(word)
+function! opeditor#grep(word)
   let word = a:word
   if word == ''
     let word = input("OctopressGrep word: ")
@@ -111,7 +115,7 @@ function! octopress#grep(word)
   endtry
 endfunction
 
-function! octopress#new(title)
+function! opeditor#new(title)
   let items = {
   \ 'title': a:title,
   \ 'date':  localtime(),
@@ -164,7 +168,7 @@ function! octopress#new(title)
 endfunction
 
 let s:default_template = [
-\ '---
+\ '---' ,
 \ 'layout: post',
 \ 'title: {{_title_}}',
 \ 'published: {{_published_}}',
