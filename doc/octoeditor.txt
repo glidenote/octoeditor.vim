@@ -98,8 +98,9 @@ Example:
     title: "{{_title_}}"
     published: true
     date: {{_date_}}
-    tags: [{{_tags_}}]
-    categories: [{{_categories_}}]
+    comments: true
+    tags: {{_tags_}}
+    categories: {{_categories_}}
     ---
 <
     If you input like following.
@@ -115,8 +116,9 @@ Example:
     title: "Sample Post"
     published: true
     date: 2012-03-29 22:16
-    tags: [foo]
-    categories: [bar, baz]
+    comment: true
+    tags: foo
+    categories: bar baz
     ---
 <
 
@@ -136,8 +138,9 @@ Example:
     title: "Sample Post"
     published: true
     date: 2012-03-29 22:16
-    tags: []
-    categories: []
+    comment: true
+    tags: 
+    categories: 
     ---
 <
 

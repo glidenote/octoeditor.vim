@@ -162,8 +162,9 @@ let s:default_template = [
 \ 'title: "{{_title_}}"',
 \ 'published: true',
 \ 'date: {{_date_}}',
-\ 'tags: [{{_tags_}}]',
-\ 'categories: [{{_categories_}}]',
+\ 'comments: true',
+\ 'tags: {{_tags_}}',
+\ 'categories: {{_categories_}}',
 \ '---',
 \]
 
