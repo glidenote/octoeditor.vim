@@ -13,7 +13,9 @@ You may also want to add a few mappings to stream line the behavior:
 
     map <Leader>on  :OctopressNew<CR>
     map <Leader>ol  :OctopressList<CR>
-    map <Leader>og  :OctopressGenerate<CR>
+    map <Leader>og  :OctopressGrep<CR>
+    nmap ,og  :OctopressGenerate<CR>
+    nmap ,od  :OctopressDeploy<CR>
 
 Commands
 ------------
@@ -26,7 +28,7 @@ Show Posts List:
 
     :OctopressList
 
-Grep Octopress Post Directory:
+Grep Octopress Posts Directory:
 
     :OctopressGrep
 

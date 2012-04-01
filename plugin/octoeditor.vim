@@ -22,7 +22,7 @@ endif
 
 command! -nargs=0 OctopressList :call octoeditor#list()
 command! -nargs=0 OctopressGenerate :call octoeditor#generate()
-command! -nargs=0 OctopressDeploy :call octoeditor#gendeploy()
+command! -nargs=0 OctopressDeploy :call octoeditor#deploy()
 command! -nargs=? OctopressGrep :call octoeditor#grep(<q-args>)
 command! -nargs=? OctopressNew :call octoeditor#new(<q-args>)
 
