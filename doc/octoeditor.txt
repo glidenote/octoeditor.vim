@@ -58,8 +58,8 @@ COMMANDS                                        *octoeditor-commands*
         OctopressGrep word:
 <
                                                 *octoeditor-:OctopressGenerate*
-:OctopressGenerate           Generate Posts.
-     Generate Post file.
+:OctopressGenerate           generate jekyll site(generate Posts)
+     generate jekyll site(generate Post file).
 
                                                 *octoeditor-:OctopressDeploy*
 :OctopressDeploy             Deploy Posts.

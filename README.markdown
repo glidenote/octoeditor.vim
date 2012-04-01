@@ -30,7 +30,7 @@ Grep Octopress Post Directory:
 
     :OctopressGrep
 
-Generate Posts:
+Generate jekyll site(Generate Posts):
 
     :OctopressGenerate
 
