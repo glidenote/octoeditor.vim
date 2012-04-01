@@ -1,18 +1,18 @@
-" autoload/octeditor.vim
+" autoload/octoeditor.vim
 " Author:  Akira Maeda <glidenote@gmail.com>
 " Version: 0.0.0
-" Install this file as autoload/octeditor.vim.  This file is sourced manually by
-" plugin/octeditor.vim.  It is in autoload directory to allow for future usage of
+" Install this file as autoload/octoeditor.vim.  This file is sourced manually by
+" plugin/octoeditor.vim.  It is in autoload directory to allow for future usage of
 " Vim 7's autoload feature.
 
 " Exit quickly when:
 " - this plugin was already loaded (or disabled)
 " - when 'compatible' is set
 
-if &cp || exists("g:autoloaded_octeditor")
+if &cp || exists("g:autoloaded_octoeditor")
   finish
 endif
-let g:autoloaded_octeditor= '1'
+let g:autoloaded_octoeditor= '1'
 
 let s:cpo_save = &cpo
 set cpo&vim
@@ -75,7 +75,7 @@ endif
 "------------------------
 " function
 "------------------------
-function! octeditor#list()
+function! octoeditor#list()
   if get(g:, 'octopress_vimfiler', 0) != 0
     exe "VimFiler" s:escarg(g:octopress_path) . "/source/_posts"
   else
@@ -83,15 +83,15 @@ function! octeditor#list()
   endif
 endfunction
 
-function octeditor#generate()
+function octoeditor#generate()
   exe "!cd " s:escarg(g:octopress_path) . " && rake generate "
 endfunction
 
-function octeditor#deploy()
+function octoeditor#deploy()
   exe "!cd " s:escarg(g:octopress_path) . " && rake gen_deploy "
 endfunction
 
-function! octeditor#grep(word)
+function! octoeditor#grep(word)
   let word = a:word
   if word == ''
     let word = input("OctopressGrep word: ")
@@ -111,7 +111,7 @@ function! octeditor#grep(word)
   endtry
 endfunction
 
-function! octeditor#new(title)
+function! octoeditor#new(title)
   let items = {
   \ 'title': a:title,
   \ 'date':  localtime(),

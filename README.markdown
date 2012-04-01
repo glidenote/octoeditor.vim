@@ -1,3 +1,3 @@
-octeditor.vim (Octopress-Editor.vim
+octoeditor.vim (Octopress-Editor.vim)
 ============
 
