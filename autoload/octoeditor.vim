@@ -88,6 +88,7 @@ function octoeditor#generate()
 endfunction
 
 function octoeditor#deploy()
+  exe "set noswapfile"
   exe "!cd " s:escarg(g:octopress_path) . " && rake gen_deploy "
 endfunction
 
