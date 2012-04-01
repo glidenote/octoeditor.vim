@@ -1,3 +1,3 @@
-opeditor.vim (**O**cto**p**erss-**Editor.vim**)
+octeditor.vim (Octopress-Editor.vim
 ============
 
