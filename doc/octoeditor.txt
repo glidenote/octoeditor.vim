@@ -95,7 +95,7 @@ Example:
 >
     ---
     layout: post
-    title: {{_title_}}
+    title: "{{_title_}}"
     published: true
     date: {{_date_}}
     tags: [{{_tags_}}]
@@ -112,7 +112,7 @@ Example:
 >
     ---
     layout: post
-    title: Sample Post
+    title: "Sample Post"
     published: true
     date: 2012-03-29 22:16
     tags: [foo]
@@ -133,7 +133,7 @@ Example:
 >
     ---
     layout: post
-    title: Sample Post
+    title: "Sample Post"
     published: true
     date: 2012-03-29 22:16
     tags: []

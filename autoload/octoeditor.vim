@@ -159,7 +159,7 @@ endfunction
 let s:default_template = [
 \ '---' ,
 \ 'layout: post',
-\ 'title: {{_title_}}',
+\ 'title: "{{_title_}}"',
 \ 'published: true',
 \ 'date: {{_date_}}',
 \ 'tags: [{{_tags_}}]',
