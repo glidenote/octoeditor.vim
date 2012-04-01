@@ -44,7 +44,6 @@ Options
 ------------
 
     let g:octopress_post_suffix = "markdown"
-    let g:octopress_post_suffix = "txt"
     let g:octopress_post_date = "%Y-%m-%d %H:%M"
     let g:octopress_post_date = "epoch"
     let g:octopress_post_date = "%D %T"
