@@ -3,6 +3,8 @@ octoeditor.vim (Octopress-Editor.vim)
 
 This script is intended to automate the process of creating and editing [Octopress](http://octopress.org/) blog posts from within vim.
 
+![](http://blog.glidenote.com/images/2012/04/octoeditor2.png)
+
 Setup
 ------------
 Set the path to your Octopress directory in your .vimrc.(default directory `$HOME/octopress`)
