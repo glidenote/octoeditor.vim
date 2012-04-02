@@ -26,10 +26,6 @@ function! s:error(str)
 endfunction
 " }}}1
 
-if !exists('g:octopress_path')
-  let g:octopress_path = $HOME . "/octopress"
-endif
-
 if !exists('g:octopress_post_suffix')
   let g:octopress_post_suffix = "markdown"
 endif
