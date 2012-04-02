@@ -16,8 +16,8 @@ let g:loaded_octoeditor = 1
 let s:cpo_save = &cpo
 set cpo&vim
 
-if !exists('g:octoeditor_path')
-  let g:octoeditor_path = $HOME . "/octopress"
+if !exists('g:octopress_path')
+  let g:octopress_path = $HOME . "/octopress"
 endif
 
 command! -nargs=0 OctopressList :call octoeditor#list()
