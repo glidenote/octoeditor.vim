@@ -1,6 +1,6 @@
 " octoeditor.vim
 " Maintainer:  Akira Maeda <glidenote@gmail.com>
-" Version:  0.0.5
+" Version:  0.0.1
 " See doc/octoeditor.txt for instructions and usage.
 
 " Code {{{1
