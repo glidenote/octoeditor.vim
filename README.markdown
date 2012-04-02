@@ -49,6 +49,8 @@ Options
     let g:octopress_post_date = "%Y-%m-%d %H:%M"
     let g:octopress_post_date = "epoch"
     let g:octopress_post_date = "%D %T"
+    let g:octopress_comments = 0
+    let g:octopress_published = 0
     let g:octopress_prompt_tags = 1
     let g:octopress_prompt_categories = 1
     let g:octopress_qfixgrep = 1

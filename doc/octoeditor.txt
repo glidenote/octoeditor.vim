@@ -25,6 +25,8 @@ Example: >
     let g:octopress_date = "%Y-%m-%d %H:%M"
     let g:octopress_date = "epoch"
     let g:octopress_date = "%D %T"
+    let g:octopress_comments = 0
+    let g:octopress_published = 0
     let g:octopress_prompt_tags = 1
     let g:octopress_prompt_categories = 1
     let g:octopress_qfixgrep = 1
@@ -87,7 +89,9 @@ Note:
 
 Template variables:
     |{{_title_}}| Title which you input.
+    |{{_published_}}| Post publish or not.
     |{{_date_}}| Datetime when Post file created.
+    |{{_comments_}}| Allow comment or not.
     |{{_tags_}}| Tags which you input.
     |{{_categories_}}| Categories which you input.
 
@@ -96,9 +100,9 @@ Example:
     ---
     layout: post
     title: "{{_title_}}"
-    published: true
+    published: {{__published__}}
     date: {{_date_}}
-    comments: true
+    comments: {{__comments__}}
     tags: {{_tags_}}
     categories: {{_categories_}}
     ---

@@ -38,6 +38,14 @@ if !exists('g:octopress_post_date')
   let g:octopress_post_date = "%Y-%m-%d %H:%M"
 endif
 
+if !exists('g:octopress_published')
+  let g:octopress_published = 1
+endif
+
+if !exists('g:octopress_comments')
+  let g:octopress_comments = 1
+endif
+
 if !exists('g:octopress_title_pattern')
   let g:octopress_title_pattern = "[ '\"]"
 endif
@@ -116,6 +124,8 @@ function! octoeditor#new(title)
   let items = {
   \ 'title': a:title,
   \ 'date':  localtime(),
+  \ 'published': [],
+  \ 'comments': [],
   \ 'tags':  [],
   \ 'categories':  [],
   \}
@@ -128,6 +138,18 @@ function! octoeditor#new(title)
   endif
   if items['title'] == ''
     return
+  endif
+
+  if get(g:, 'octopress_published', 0) !=0
+    let items['published'] = 'true'
+  else
+    let items['published'] = 'false'
+  endif
+
+  if get(g:, 'octopress_comments', 0) != 0
+    let items['comments'] = 'true'
+  else
+    let items['comments'] = 'false'
   endif
 
   if get(g:, 'octopress_prompt_tags', 0) != 0
@@ -161,9 +183,9 @@ let s:default_template = [
 \ '---' ,
 \ 'layout: post',
 \ 'title: "{{_title_}}"',
-\ 'published: true',
+\ 'published: {{_published_}}',
 \ 'date: {{_date_}}',
-\ 'comments: true',
+\ 'comments: {{_comments_}}',
 \ 'tags: {{_tags_}}',
 \ 'categories: {{_categories_}}',
 \ '---',
