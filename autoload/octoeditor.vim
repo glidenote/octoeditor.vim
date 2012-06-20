@@ -171,7 +171,11 @@ function! octoeditor#new(title)
     endif
   endif
   " apply template
-  let err = append(0, s:apply_template(template, items))
+  let old_undolevels = &undolevels
+  set undolevels=-1
+  call append(0, s:apply_template(template, items))
+  let &undolevels = old_undolevels
+  set nomodified
 
 endfunction
 
