@@ -107,7 +107,7 @@ function! octoeditor#grep(word)
 
   try
     if get(g:, 'octopress_qfixgrep', 0) != 0
-      exe "Vimgrep" s:escarg(word) s:escarg(g:octopress_path . "/source/_posts/*")
+      exe "Vimgrep -r" s:escarg(word) s:escarg(g:octopress_path . "/source/_posts/*")
     else
       exe "vimgrep" s:escarg(word) s:escarg(g:octopress_path . "/source/_posts/*")
     endif
