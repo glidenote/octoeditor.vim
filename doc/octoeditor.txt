@@ -32,6 +32,7 @@ Example: >
     let g:octopress_qfixgrep = 1
     let g:octopress_vimfiler = 1
     let g:octopress_template_dir_path = "path/to/dir"
+    let g:octopress_auto_open_results = 1
 <
 You may also want to add a few mappings to stream line the behavior: >
     map <Leader>on  :OctopressNew<CR>
