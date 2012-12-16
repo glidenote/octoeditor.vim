@@ -79,6 +79,13 @@ endif
 "------------------------
 " function
 "------------------------
+" functions for completing tags and categories
+fun! octoeditor#completeTagsCategories(ArgLead, CmdLine, CursorPos) abort
+  " tags & categories
+  " this globpath will return full path
+  return split(fnamemodify(globpath(g:octopress_path . "/public/blog/categories", a:ArgLead . "*"), ":t"), "\n")
+endfun
+
 function! octoeditor#list()
   if get(g:, 'octopress_vimfiler', 0) != 0
     exe "VimFiler" s:escarg(g:octopress_path) . "/source/_posts"
@@ -152,11 +159,11 @@ function! octoeditor#new(title)
   endif
 
   if get(g:, 'octopress_prompt_tags', 0) != 0
-    let items['tags'] = join(split(input("Post tags: "), '\s'), ' ')
+    let items['tags'] = join(split(input("Post tags: ", "", "customlist,octoeditor#completeTagsCategories"), '\s'), ' ')
   endif
 
   if get(g:, 'octopress_prompt_categories', 0) != 0
-    let items['categories'] = join(split(input("Post categories: "), '\s'), ' ')
+    let items['categories'] = join(split(input("Post categories: ", "", "customlist,octoeditor#completeTagsCategories"), '\s'), ' ')
   endif
 
   let file_name = strftime("%Y-%m-%d-") . s:esctitle(items['title']) . "." . g:octopress_post_suffix
