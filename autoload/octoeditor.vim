@@ -1,6 +1,6 @@
 " autoload/octoeditor.vim
 " Author:  Akira Maeda <glidenote@gmail.com>
-" Version: 0.0.1
+" Version: 0.0.2
 " Install this file as autoload/octoeditor.vim.  This file is sourced manually by
 " plugin/octoeditor.vim.  It is in autoload directory to allow for future usage of
 " Vim 7's autoload feature.
