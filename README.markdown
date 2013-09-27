@@ -64,6 +64,10 @@ let g:octopress_unite_option = "-auto-preview -start-insert"
 let g:octopress_unite_source = "file_rec"
 ```
 
+with unite.vim
+
+![](http://blog.glidenote.com/images/2013/09/with_unite0.png)
+
 Install
 ------------
 
