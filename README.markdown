@@ -45,17 +45,24 @@ Deploy Posts:
 Options
 ------------
 
-    let g:octopress_post_suffix = "markdown"
-    let g:octopress_post_date = "%Y-%m-%d %H:%M"
-    let g:octopress_post_date = "epoch"
-    let g:octopress_post_date = "%D %T"
-    let g:octopress_comments = 0
-    let g:octopress_published = 0
-    let g:octopress_prompt_tags = 1
-    let g:octopress_prompt_categories = 1
-    let g:octopress_qfixgrep = 1
-    let g:octopress_vimfiler = 1
-    let g:octopress_template_dir_path = "path/to/dir"
+``` vim
+let g:octopress_post_suffix = "markdown"
+let g:octopress_post_date = "%Y-%m-%d %H:%M"
+let g:octopress_post_date = "epoch"
+let g:octopress_post_date = "%D %T"
+let g:octopress_comments = 0
+let g:octopress_published = 0
+let g:octopress_prompt_tags = 1
+let g:octopress_prompt_categories = 1
+let g:octopress_qfixgrep = 1
+let g:octopress_vimfiler = 1
+let g:octopress_template_dir_path = "path/to/dir"
+
+" with unite.vim
+let g:octopress_unite = 1
+let g:octopress_unite_option = "-auto-preview -start-insert"
+let g:octopress_unite_source = "file_rec"
+```
 
 Install
 ------------
