@@ -33,6 +33,16 @@ Example: >
     let g:octopress_vimfiler = 1
     let g:octopress_template_dir_path = "path/to/dir"
     let g:octopress_auto_open_results = 1
+
+    " use unite (default 0)
+    let g:octopress_unite = 1
+
+    " use arbitrary unite option (default is empty)
+    let g:octopress_unite_option = "-auto-preview -start-insert"
+
+    " use arbitrary unite source (default is 'file')
+    let g:octopress_unite_source = "file_rec"
+
 <
 You may also want to add a few mappings to stream line the behavior: >
     map <Leader>on  :OctopressNew<CR>
