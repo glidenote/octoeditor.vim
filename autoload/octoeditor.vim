@@ -58,6 +58,14 @@ if !exists('g:octopress_template_dir_path')
   let g:octopress_template_dir_path = ""
 endif
 
+if !exists('g:octopress_unite_source')
+  let g:octopress_unite_source = "file"
+endif
+
+if !exists('g:octopress_unite_option')
+  let g:octopress_unite_option = ""
+endif
+
 function! s:esctitle(str)
   let str = a:str
   let str = tolower(str)
@@ -89,6 +97,8 @@ endfun
 function! octoeditor#list()
   if get(g:, 'octopress_vimfiler', 0) != 0
     exe "VimFiler" s:escarg(g:octopress_path) . "/source/_posts"
+  elseif get(g:, 'octopress_unite', 0) != 0
+    exe "Unite" g:octopress_unite_source.':'.s:escarg(g:octopress_path) ."/source/_posts" g:octopress_unite_option
   else
     exe "e" s:escarg(g:octopress_path) . "/source/_posts"
   endif
