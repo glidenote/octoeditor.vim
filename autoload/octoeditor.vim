@@ -199,6 +199,26 @@ function! octoeditor#new(title)
 
 endfunction
 
+function! octoeditor#fileup(file)
+  let file = a:file
+  if file == ''
+    let file = input("UploadFile: ", "", "file")
+  endif
+
+  let file_name  = fnamemodify(file, ':t')
+  let image_dir  = s:escarg("/images/" . strftime("%Y/%m/%d/"))
+  let file_path  = s:escarg(g:octopress_path . "/source") . image_dir
+  if !isdirectory(file_path)
+    call mkdir(file_path, 'p')
+  endif
+  silent exe "!cp " . file . " " . file_path . file_name
+  let img_tag = '\![{{title}}]({{src}})'
+  let img_tag = substitute(img_tag, '{{title}}', file_name, '')
+  let img_tag = substitute(img_tag, '{{src}}', image_dir . file_name, '')
+  exe "read !echo '" . img_tag . "'"
+  redraw!
+endfunction
+
 let s:default_template = [
 \ '---' ,
 \ 'layout: post',

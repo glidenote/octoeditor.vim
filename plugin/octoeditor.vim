@@ -25,6 +25,7 @@ command! -nargs=0 OctopressGenerate :call octoeditor#generate()
 command! -nargs=0 OctopressDeploy :call octoeditor#deploy()
 command! -nargs=? OctopressGrep :call octoeditor#grep(<q-args>)
 command! -nargs=? OctopressNew :call octoeditor#new(<q-args>)
+command! -nargs=? OctopressFileUp :call octoeditor#fileup(<q-args>)
 
 let &cpo = s:cpo_save
 
