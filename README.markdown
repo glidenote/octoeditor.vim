@@ -62,6 +62,9 @@ let g:octopress_template_dir_path = "path/to/dir"
 let g:octopress_unite = 1
 let g:octopress_unite_option = "-auto-preview -start-insert"
 let g:octopress_unite_source = "file_rec"
+
+" use bundle exec (rake 0.9.2~)
+let g:octopress_bundle_exec = 1
 ```
 
 with unite.vim
