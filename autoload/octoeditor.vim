@@ -119,7 +119,7 @@ endfunction
 function octoeditor#deploy()
   exe "set noswapfile"
   if get(g:, 'octopress_bundle_exec', 0) != 0
-    exe "!cd " s:escarg(g:octopress_path) . " && bundle rake gen_deploy "
+    exe "!cd " s:escarg(g:octopress_path) . " && bundle exec rake gen_deploy "
   else
     exe "!cd " s:escarg(g:octopress_path) . " && rake gen_deploy "
   endif
