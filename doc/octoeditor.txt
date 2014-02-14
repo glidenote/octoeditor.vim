@@ -43,6 +43,9 @@ Example: >
     " use arbitrary unite source (default is 'file')
     let g:octopress_unite_source = "file_rec"
 
+    " use bundle exec (rake 0.9.2~)
+    let g:octopress_bundle_exec = 1
+
 <
 You may also want to add a few mappings to stream line the behavior: >
     map <Leader>on  :OctopressNew<CR>

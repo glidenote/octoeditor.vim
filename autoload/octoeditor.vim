@@ -66,6 +66,10 @@ if !exists('g:octopress_unite_option')
   let g:octopress_unite_option = ""
 endif
 
+if !exists('g:octopress_bundle_exec')
+  let g:octopress_bundle_exec = 0
+endif
+
 function! s:esctitle(str)
   let str = a:str
   let str = tolower(str)
@@ -105,12 +109,20 @@ function! octoeditor#list()
 endfunction
 
 function octoeditor#generate()
-  exe "!cd " s:escarg(g:octopress_path) . " && rake generate "
+  if get(g:, 'octopress_bundle_exec', 0) != 0
+    exe "!cd " s:escarg(g:octopress_path) . " && bundle exec rake generate "
+  else
+    exe "!cd " s:escarg(g:octopress_path) . " && rake generate "
+  endif
 endfunction
 
 function octoeditor#deploy()
   exe "set noswapfile"
-  exe "!cd " s:escarg(g:octopress_path) . " && rake gen_deploy "
+  if get(g:, 'octopress_bundle_exec', 0) != 0
+    exe "!cd " s:escarg(g:octopress_path) . " && bundle rake gen_deploy "
+  else
+    exe "!cd " s:escarg(g:octopress_path) . " && rake gen_deploy "
+  endif
 endfunction
 
 function! octoeditor#grep(word)
