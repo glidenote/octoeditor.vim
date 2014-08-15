@@ -140,7 +140,7 @@ function! octoeditor#grep(word)
     else
       exe "vimgrep" s:escarg(word) s:escarg(g:octopress_path . "/source/_posts/*")
     endif
-    if get(g:, 'octopress_auto_open_results', 1) = 1
+    if get(g:, 'octopress_auto_open_results', 1) == 1
       copen
     endif
   catch
